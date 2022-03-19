@@ -1,0 +1,24 @@
+# build Configuration, i.e. Debug, Release, etc.
+configuration: Release
+
+dotnet_csproj:
+  patch: true
+  file: 'src\Renci.SshNet.NETCore\Renci.SshNet.NETCore.csproj'
+  version: '{version}'
+  package_version: '{version}'
+  assembly_version: '{version}'
+  file_version: '{version}'
+  informational_version: '{version}'
+
+# scripts to run before build
+before_build:
+  - dotnet restore .\src\Renci.SshNet.NETCore\Renci.SshNet.NETCore.csproj
+
+build_script:
+  - dotnet build .\src\Renci.SshNet.NETCore\Renci.SshNet.NETCore.csproj
+
+artifacts:
+  - path: .\src\Renci.SshNet.NETCore\bin\Release\*.nupkg
+
+deploy_script:
+  dotnet nuget push .\src\Renci.SshNet.NETCore\bin\Release\*.nupkg -k oy2ba6knn2hnr4z5mghadhyoflch7rdevjn4yghlszhzai -s https://api.nuget.org/v3/index.json

@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Company>Telenor Inpli</Company>
+    <Authors>Darren R. Starr</Authors>
+    <Version>0.0.1</Version>
+    <Product>VtConnect, single connectivity library for terminal protocols</Product>
+    <Description>This is a toolkit intended to provide a single common UI for multiple terminal protocols like Telnet and SSH.</Description>
+    <Copyright>2018 Darren R. Starr - Telenor Inpli</Copyright>
+    <PackageTags>telnet ssh serial</PackageTags>
+    <PackageReleaseNotes>This is a very early version and has known bugs... primarily with remote session disconnectivity.</PackageReleaseNotes>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Serial\SerialConnection.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Serial\SerialConnection.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\SSH.NET\src\Renci.SshNet.NETCore\Renci.SshNet.NETCore.csproj" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "PowerTask (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "PowerTask (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

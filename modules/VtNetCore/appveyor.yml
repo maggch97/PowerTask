@@ -1,0 +1,29 @@
+# build Configuration, i.e. Debug, Release, etc.
+configuration: Release
+
+dotnet_csproj:
+  patch: true
+  file: '**\*.csproj'
+  version: '{version}'
+  package_version: '{version}'
+  assembly_version: '{version}'
+  file_version: '{version}'
+  informational_version: '{version}'
+
+# scripts to run before build
+before_build:
+  - nuget restore
+
+build_script:
+  - dotnet build .\VtNetCore.sln
+
+test_script:
+  - dotnet test .\VtNetCore.Unit.Tests\
+
+artifacts:
+  - path: VtNetCore\bin\Release\*.nupkg
+  
+deploy:
+- provider: NuGet
+  api_key:
+    secure: AjExfvnuMqaldDrs7CGj1pGtLojzKHn8IzzuUyytANxmXUC2/CCZgh8pchZ4TtXn

@@ -1,0 +1,29 @@
+﻿<Window
+    x:Class="PowerTask.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PowerTask"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls">
+    <Grid CharacterReceived="Grid_CharacterReceived">
+        <NavigationView x:Name="nvSample" IsBackButtonVisible="Collapsed" ItemInvoked="NavigationView_ItemInvoked" MenuItemsSource="{x:Bind NavigationItems}">
+            <NavigationView.AutoSuggestBox>
+                <AutoSuggestBox PlaceholderText="Search" QueryIcon="Find" 
+                     x:Name="SearchTxt" />
+            </NavigationView.AutoSuggestBox>
+            <NavigationView.MenuItemTemplate>
+                <DataTemplate>
+                    <NavigationViewItem Content="{Binding Content}" Icon="{Binding Icon}"></NavigationViewItem>
+                </DataTemplate>
+            </NavigationView.MenuItemTemplate>
+
+            <NavigationView.PaneFooter>
+                <NavigationViewItem SelectsOnInvoked="true" Content="Add Task" Tag="Add" Icon="Add" Tapped="Add_Tapped"/>
+            </NavigationView.PaneFooter>
+
+            <Frame x:Name="contentFrame"/>
+        </NavigationView>
+    </Grid>
+</Window>

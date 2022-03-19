@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VtConnect", "VtConnect\VtConnect.csproj", "{ACE72DF6-4C9A-4897-9DED-B11A16E9D01D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VtConnect.Tests", "VtConnect.Tests\VtConnect.Tests.csproj", "{119861D2-84AD-43AE-BA5F-3B3E7531B8DE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{A9C91893-F1FE-4945-A0BB-7723B0E89E63}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Renci.SshNet.NETCore", "modules\SSH.NET\src\Renci.SshNet.NETCore\Renci.SshNet.NETCore.csproj", "{143952A6-F06F-48DD-B629-1D6C46882B8E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ACE72DF6-4C9A-4897-9DED-B11A16E9D01D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACE72DF6-4C9A-4897-9DED-B11A16E9D01D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACE72DF6-4C9A-4897-9DED-B11A16E9D01D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACE72DF6-4C9A-4897-9DED-B11A16E9D01D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{119861D2-84AD-43AE-BA5F-3B3E7531B8DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{119861D2-84AD-43AE-BA5F-3B3E7531B8DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{119861D2-84AD-43AE-BA5F-3B3E7531B8DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{119861D2-84AD-43AE-BA5F-3B3E7531B8DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{143952A6-F06F-48DD-B629-1D6C46882B8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{143952A6-F06F-48DD-B629-1D6C46882B8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{143952A6-F06F-48DD-B629-1D6C46882B8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{143952A6-F06F-48DD-B629-1D6C46882B8E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{143952A6-F06F-48DD-B629-1D6C46882B8E} = {A9C91893-F1FE-4945-A0BB-7723B0E89E63}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6429BF42-D55B-40F2-BA52-26CB3038BEAE}
+	EndGlobalSection
+EndGlobal

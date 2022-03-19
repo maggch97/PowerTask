@@ -1,0 +1,46 @@
+﻿<Page
+    x:Class="PowerTask.BlankPage1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PowerTask"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <ListView Grid.Row="2" Grid.Column="0" Margin="0,0,0,10" x:Name="CommandList" ItemsSource="{x:Bind items , Mode=TwoWay}" SelectionMode="None" CharacterReceived="CommandList_CharacterReceived" KeyDown="CommandList_KeyDown">
+            <ListView.ItemTemplate>
+                <DataTemplate x:Name="ListItemTemplete" x:DataType="local:CommandItem">
+                    <StackPanel Orientation="Vertical" Margin="0,10,0,0">
+                        <Grid HorizontalAlignment="Stretch">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition  Width="auto"/>
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Button Margin="0,0,10,0" Click="Button_Click">
+                                <FontIcon  FontSize="10" FontFamily="About Segoe MDL2" Glyph="&#x25B6;"/>
+                            </Button>
+                            <TextBox Grid.Column="1" Text="{x:Bind Command,Mode=TwoWay}" />
+
+                        </Grid>
+                        <!--<Grid>
+                                <TextBlock Text="{x:Bind Result,Mode=TwoWay}" ></TextBlock>
+                            </Grid>-->
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <StackPanel Margin="10,10,10,10" Orientation="Horizontal" Grid.Row="1" Grid.Column="0" >
+            <Button Content="Add Command" Margin="3" x:Name="AddCommandButton" Click="AddCommandButton_Click"></Button>
+            <Button Content="Run All" Margin="3" x:Name="RunAllButton" Click="RunAllButton_Click"></Button>
+        </StackPanel>
+        <local:VirtualTerminalControl Margin="10,10,10,10" Height="300" Grid.Row="0" Grid.Column="0"  x:Name="terminal"></local:VirtualTerminalControl>
+    </Grid>
+</Page>
